@@ -4,7 +4,329 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adeus Mente Pobre - Transforme Sua Relação Com Dinheiro</title>
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: #0a0a0a;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* HERO SECTION - Impacto Imediato */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+        }
+        
+        .warning-badge {
+            background: #ff0000;
+            color: #fff;
+            padding: 8px 20px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #d4af37;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .subheadline {
+            font-size: 24px;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+        
+        /* Botão CTA Principal */
+        .cta-button {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            color: #000;
+            padding: 20px 50px;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+        }
+        
+        .price-tag {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #d4af37;
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 24px;
+        }
+        
+        .new-price {
+            font-size: 42px;
+            font-weight: bold;
+            color: #d4af37;
+        }
+        
+        /* Seção de Dor */
+        .pain-section {
+            background: #1a1a1a;
+            padding: 60px 20px;
+            border-left: 5px solid #ff0000;
+        }
+        
+        .pain-section h2 {
+            font-size: 36px;
+            color: #ff4444;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .pain-point {
+            background: #2a2a2a;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 3px solid #ff4444;
+        }
+        
+        .pain-point::before {
+            content: "❌ ";
+            font-size: 24px;
+        }
+        
+        /* Seção de Transformação */
+        .transformation {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 60px 20px;
+        }
+        
+        .transformation h2 {
+            font-size: 36px;
+            color: #d4af37;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .before, .after {
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .before {
+            background: #2a2a2a;
+            border: 2px solid #ff4444;
+        }
+        
+        .after {
+            background: #2d3a2d;
+            border: 2px solid #4CAF50;
+        }
+        
+        .before h3 {
+            color: #ff4444;
+            margin-bottom: 15px;
+        }
+        
+        .after h3 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+        
+        .before ul, .after ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .before li::before {
+            content: "❌ ";
+            color: #ff4444;
+        }
+        
+        .after li::before {
+            content: "✅ ";
+            color: #4CAF50;
+        }
+        
+        /* Seção de Conteúdo */
+        .content-section {
+            background: #1a1a1a;
+            padding: 60px 20px;
+        }
+        
+        .content-section h2 {
+            font-size: 36px;
+            color: #d4af37;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .module {
+            background: #2a2a2a;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .module h3 {
+            color: #d4af37;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .module p {
+            color: #cccccc;
+            line-height: 1.8;
+        }
+        
+        /* Seção de Urgência */
+        .urgency {
+            background: #ff0000;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Garantia */
+        .guarantee {
+            background: #2d3a2d;
+            padding: 60px 20px;
+            text-align: center;
+            border: 3px solid #4CAF50;
+        }
+        
+        .guarantee-badge {
+            width: 150px;
+            height: 150px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 48px;
+        }
+        
+        .guarantee h2 {
+            color: #4CAF50;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        /* FAQ */
+        .faq {
+            background: #1a1a1a;
+            padding: 60px 20px;
+        }
+        
+        .faq h2 {
+            font-size: 36px;
+            color: #d4af37;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .faq-item {
+            background: #2a2a2a;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .faq-item h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .faq-item p {
+            color: #cccccc;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: #000;
+        }
+        
+        .final-cta h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+        
+        .final-cta .cta-button {
+            background: #000;
+            color: #d4af37;
+            font-size: 28px;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .subheadline {
+                font-size: 18px;
+            }
+            
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-button {
+                font-size: 20px;
+                padding: 15px 30px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -20,19 +342,19 @@
                 <strong>(E Como Reprogramar Seu Cérebro Para a Riqueza)</strong>
             </p>
             
-            <a href="checkout.html" class="cta-button">
+            <a href="#comprar" class="cta-button">
                 QUERO TRANSFORMAR MINHA MENTE AGORA
             </a>
             
             <div class="price-tag">
                 <span class="old-price">De R$ 97,00</span><br>
                 <span>Por apenas</span><br>
-                <span class="new-price">R$ 17,97</span>
+                <span class="new-price">R$ 37,00</span>
             </div>
         </div>
     </div>
 
-    <!-- SEÇÃO DE DOR -->
+    <!-- SEÇÃO DE DOR - Fala Direto com o Reptiliano -->
     <div class="pain-section">
         <div class="container">
             <h2>Reconhece Alguma Destas Situações?</h2>
@@ -119,7 +441,7 @@
             </p>
             
             <div style="text-align: center; margin-top: 30px;">
-                <a href="checkout.html" class="cta-button">
+                <a href="#comprar" class="cta-button">
                     QUERO REPROGRAMAR MINHA MENTE AGORA
                 </a>
             </div>
@@ -177,7 +499,7 @@
             </div>
             
             <div style="text-align: center; margin-top: 50px;">
-                <a href="checkout.html" class="cta-button">
+                <a href="#comprar" class="cta-button">
                     GARANTIR MEU EXEMPLAR AGORA
                 </a>
             </div>
@@ -235,13 +557,13 @@
             
             <div class="faq-item">
                 <h3>❓ Por que tão barato?</h3>
-                <p>Porque a missão é impactar o máximo de pessoas. R$ 17,97 é o preço de um lanche – mas pode mudar toda sua relação com dinheiro.</p>
+                <p>Porque a missão é impactar o máximo de pessoas. R$ 37 é o preço de um almoço – mas pode mudar toda sua relação com dinheiro.</p>
             </div>
         </div>
     </div>
 
     <!-- CTA FINAL -->
-    <div class="final-cta">
+    <div class="final-cta" id="comprar">
         <div class="container">
             <h2>Está na Hora de Escolher</h2>
             
@@ -251,22 +573,22 @@
                 
                 <strong>OU</strong><br><br>
                 
-                Pode investir R$ 17,97 (o preço de um lanche)<br>
+                Pode investir R$ 37 (o preço de um almoço)<br>
                 e iniciar a transformação mais importante da sua vida.
             </p>
             
             <div style="background: rgba(0,0,0,0.3); padding: 30px; border-radius: 10px; margin: 30px 0;">
                 <p style="font-size: 18px; margin-bottom: 10px;">De <span style="text-decoration: line-through;">R$ 97,00</span></p>
-                <p style="font-size: 48px; font-weight: bold; margin: 10px 0;">R$ 17,97</p>
+                <p style="font-size: 48px; font-weight: bold; margin: 10px 0;">R$ 37,00</p>
                 <p style="font-size: 16px;">Acesso imediato + Garantia de 7 dias</p>
             </div>
             
-            <a href="checkout.html" class="cta-button">
+            <a href="https://pay.kiwify.com.br/RKtyjIx"cta-button">
                 SIM, QUERO TRANSFORMAR MINHA MENTE AGORA
             </a>
             
             <p style="font-size: 16px; margin-top: 30px; color: #000;">
-                🔒 Pagamento 100% seguro<br>
+                🔒 Pagamento 100% seguro via Kiwify<br>
                 ⚡ Acesso imediato após confirmação<br>
                 🛡️ Garantia incondicional de 7 dias
             </p>
@@ -283,6 +605,5 @@
         </p>
     </div>
 
-    <script src="js/main.js"></script>
 </body>
 </html>
