@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Pedido - Adeus Mente Pobre</title>
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="checkout-header">
+        <h1>🔒 Finalizar Pedido Seguro</h1>
+        <p>Você está a um passo de transformar sua mente e sua relação com dinheiro</p>
+    </div>
+
+    <!-- Container Principal -->
+    <div class="checkout-container">
+        
+        <!-- COLUNA ESQUERDA - Formulário -->
+        <div class="checkout-form">
+            
+            <!-- Timer de Urgência -->
+            <div class="urgency-timer">
+                <h3>⚠️ OFERTA EXPIRA EM:</h3>
+                <div class="timer-display" id="timer">14:59</div>
+                <p class="timer-label">Garanta seu desconto antes que acabe</p>
+            </div>
+            
+            <!-- Botão de Compra Principal -->
+            <button class="buy-button" onclick="finalizarCompra()">
+                🔐 COMPRAR AGORA - R$ 17,97
+            </button>
+            
+            <!-- Selos de Segurança -->
+            <div class="security-badges">
+                <div class="security-badge">
+                    <span class="security-badge-icon">🔒</span>
+                    <span>SSL Seguro</span>
+                </div>
+                <div class="security-badge">
+                    <span class="security-badge-icon">✓</span>
+                    <span>Compra Protegida</span>
+                </div>
+                <div class="security-badge">
+                    <span class="security-badge-icon">🛡️</span>
+                    <span>Garantia 7 Dias</span>
+                </div>
+            </div>
+            
+            <div class="trust-elements">
+                <div class="trust-item">
+                    <span class="trust-icon">⚡</span>
+                    Acesso Imediato
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">📱</span>
+                    Leia em Qualquer Dispositivo
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🔄</span>
+                    Garantia de Reembolso
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- COLUNA DIREITA - Resumo do Pedido -->
+        <div class="order-summary">
+            
+            <!-- Resumo -->
+            <div class="summary-box">
+                <h2>📦 Seu Pedido</h2>
+                
+                <div class="product-item">
+                    <div class="product-image">
+                        ADEUS<br>MENTE<br>POBRE
+                    </div>
+                    <div class="product-details">
+                        <h3>E-book Adeus Mente Pobre</h3>
+                        <p>Versão Digital (PDF)</p>
+                        <p style="color: #4CAF50; font-weight: 600;">✓ Acesso Imediato</p>
+                    </div>
+                </div>
+                
+                <!-- Bônus -->
+                <div class="bonus-section">
+                    <h3>🎁 BÔNUS EXCLUSIVOS INCLUSOS</h3>
+                    <div class="bonus-item">
+                        <strong>Guia Prático de Ação</strong> (R$ 47)
+                    </div>
+                    <div class="bonus-item">
+                        <strong>Checklist de Transformação</strong> (R$ 27)
+                    </div>
+                    <div class="bonus-item">
+                        <strong>Afirmações de Abundância</strong> (R$ 19)
+                    </div>
+                </div>
+                
+                <!-- Breakdown de Preços -->
+                <div class="price-breakdown">
+                    <div class="price-row old-price">
+                        <span>E-book</span>
+                        <span>R$ 97,00</span>
+                    </div>
+                    <div class="price-row old-price">
+                        <span>Bônus</span>
+                        <span>R$ 93,00</span>
+                    </div>
+                    <div class="price-row discount">
+                        <span>Desconto Hoje</span>
+                        <span>- R$ 172,03</span>
+                    </div>
+                    <div class="price-row total">
+                        <span>TOTAL HOJE</span>
+                        <span>R$ 17,97</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Garantia -->
+            <div class="guarantee-box">
+                <div class="guarantee-icon">🛡️</div>
+                <h3>Garantia Incondicional</h3>
+                <p style="font-size: 14px; color: #333;">
+                    Você tem 7 dias para ler e aplicar. 
+                    Se não gostar, devolvemos 100% do seu dinheiro.
+                    Sem perguntas.
+                </p>
+            </div>
+            
+            <!-- Depoimentos Mini -->
+            <div class="summary-box">
+                <h2>💬 O Que Dizem</h2>
+                
+                <div class="testimonial-mini">
+                    "Este livro mudou completamente minha relação com dinheiro. Em 30 dias já vi resultados reais."
+                    <strong>— Maria S., Empresária</strong>
+                </div>
+                
+                <div class="testimonial-mini">
+                    "Finalmente entendi por que sempre sabotava minha prosperidade. Transformador!"
+                    <strong>— João P., Consultor</strong>
+                </div>
+                
+                <div class="testimonial-mini">
+                    "Não é autoajuda barata. É ciência aplicada. Recomendo!"
+                    <strong>— Ana L., Psicóloga</strong>
+                </div>
+            </div>
+            
+            <!-- FAQ Mini -->
+            <div class="faq-mini">
+                <h3>❓ Dúvidas Rápidas</h3>
+                
+                <div class="faq-item-mini">
+                    <div class="faq-question">Quando recebo o e-book?</div>
+                    <div class="faq-answer">Imediatamente após a confirmação do pagamento no seu e-mail.</div>
+                </div>
+                
+                <div class="faq-item-mini">
+                    <div class="faq-question">Posso ler no celular?</div>
+                    <div class="faq-answer">Sim! Em celular, tablet, computador ou kindle.</div>
+                </div>
+                
+                <div class="faq-item-mini">
+                    <div class="faq-question">E se não gostar?</div>
+                    <div class="faq-answer">7 dias de garantia total. Devolvemos seu dinheiro sem perguntas.</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <script src="js/checkout.js"></script>
+</body>
+</html>

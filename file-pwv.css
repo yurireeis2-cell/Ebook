@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Header do Checkout */
+.checkout-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.checkout-header h1 {
+    color: #d4af37;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.checkout-header p {
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Container Principal */
+.checkout-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 30px;
+}
+
+/* COLUNA ESQUERDA */
+.checkout-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+/* Timer de Urgência */
+.urgency-timer {
+    background: linear-gradient(135deg, #ff4444, #cc0000);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.urgency-timer h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.timer-display {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+
+.timer-label {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* Botão de Compra */
+.buy-button {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    color: #000;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.buy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+}
+
+/* Selos de Segurança */
+.security-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.security-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.security-badge-icon {
+    font-size: 24px;
+}
+
+/* COLUNA DIREITA */
+.order-summary {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.summary-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.summary-box h2 {
+    font-size: 22px;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Produto */
+.product-item {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    width: 80px;
+    height: 100px;
+    background: linear-gradient(135deg, #1a1a1a, #d4af37);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+}
+
+.product-details h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #1a1a1a;
+}
+
+.product-details p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Bônus */
+.bonus-section {
+    background: #fff9e6;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px dashed #d4af37;
+    margin: 20px 0;
+}
+
+.bonus-section h3 {
+    color: #d4af37;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.bonus-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.bonus-item::before {
+    content: "🎁";
+    font-size: 20px;
+}
+
+/* Preços */
+.price-breakdown {
+    border-top: 2px solid #e0e0e0;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.price-row.old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.price-row.discount {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.price-row.total {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d4af37;
+    border-top: 2px solid #d4af37;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+/* Garantia */
+.guarantee-box {
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid #4CAF50;
+    text-align: center;
+}
+
+.guarantee-box h3 {
+    color: #4CAF50;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.guarantee-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+/* Depoimentos */
+.testimonial-mini {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid #d4af37;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.testimonial-mini strong {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    color: #d4af37;
+}
+
+/* FAQ Mini */
+.faq-mini {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.faq-mini h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.faq-item-mini {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-item-mini:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.faq-answer {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Trust Elements */
+.trust-elements {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.trust-item {
+    font-size: 12px;
+    color: #666;
+}
+
+.trust-icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Responsivo */
+@media (max-width: 968px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .order-summary {
+        position: static;
+    }
+}
