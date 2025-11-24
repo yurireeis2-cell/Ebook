@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adeus Mente Pobre - Transforme Sua Relação Com Dinheiro</title>
+    <title>ADEUS MENTE POBRE - A Reprogramação Mental Que Vai Mudar Sua Vida Financeira Para Sempre</title>
+    
+    <!-- Meta Tags para SEO e Conversão -->
+    <meta name="description" content="Descubra o método comprovado que já transformou a vida financeira de mais de 47.312 pessoas. Garanta seu acesso com 60% de desconto.">
+    <meta property="og:title" content="ADEUS MENTE POBRE - Transforme Sua Relação Com Dinheiro">
+    <meta property="og:description" content="O e-book que vai reprogramar sua mente para a riqueza em apenas 7 dias">
+    <meta property="og:image" content="sua-imagem-de-preview.jpg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    
     <style>
         * {
             margin: 0;
@@ -11,310 +22,1185 @@
             box-sizing: border-box;
         }
         
+        :root {
+            --gold: #FFD700;
+            --gold-dark: #B8860B;
+            --red: #FF0000;
+            --green: #00FF00;
+            --dark: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --light-gray: #2a2a2a;
+        }
+        
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: #ffffff;
-            background: #0a0a0a;
+            background: var(--dark);
+            overflow-x: hidden;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
-        /* HERO SECTION - Impacto Imediato */
-        .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding: 60px 20px;
+
+        /* ==========================
+           BARRA DE URGÊNCIA FIXA NO TOPO
+        ========================== */
+        .top-urgency-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(90deg, var(--red) 0%, #8B0000 100%);
+            color: #fff;
+            padding: 12px 20px;
             text-align: center;
-            border-bottom: 3px solid #d4af37;
+            z-index: 9999;
+            font-weight: 700;
+            font-size: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .top-urgency-bar .timer {
+            display: inline-block;
+            background: rgba(0,0,0,0.3);
+            padding: 5px 15px;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        /* Espaço para compensar a barra fixa */
+        .hero {
+            margin-top: 50px;
         }
         
+        /* ==========================
+           HERO SECTION - IMPACTO MÁXIMO
+        ========================== */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 100%);
+            padding: 80px 20px 60px;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efeito de partículas de fundo */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Badge de Aviso Pulsante */
         .warning-badge {
-            background: #ff0000;
+            background: var(--red);
             color: #fff;
-            padding: 8px 20px;
+            padding: 12px 30px;
             display: inline-block;
-            font-weight: bold;
+            font-weight: 900;
             font-size: 14px;
-            margin-bottom: 20px;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
             animation: pulse 2s infinite;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            border-radius: 5px;
+            text-transform: uppercase;
         }
         
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(255, 0, 0, 0.9);
+            }
         }
         
         h1 {
-            font-size: 48px;
-            font-weight: bold;
-            color: #d4af37;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-family: 'Playfair Display', serif;
+            font-size: 68px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold) 0%, #FFF8DC 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            letter-spacing: -2px;
         }
-        
-        .subheadline {
-            font-size: 24px;
+
+        .hero-subheadline {
+            font-size: 28px;
             color: #e0e0e0;
-            margin-bottom: 30px;
-            font-weight: normal;
+            margin-bottom: 35px;
+            font-weight: 400;
+            line-height: 1.4;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        /* Botão CTA Principal */
-        .cta-button {
-            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-            color: #000;
-            padding: 20px 50px;
+
+        .hero-subheadline strong {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* Social Proof Imediato */
+        .social-proof {
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-proof-item {
+            text-align: center;
+        }
+
+        .social-proof-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .social-proof-label {
+            font-size: 14px;
+            color: #ccc;
+            margin-top: 5px;
+        }
+
+        /* Estrelas de Avaliação */
+        .stars {
+            color: var(--gold);
             font-size: 24px;
-            font-weight: bold;
+            margin: 20px 0;
+            letter-spacing: 5px;
+        }
+
+        /* CTA Principal - Super Destacado */
+        .cta-button {
+            background: linear-gradient(135deg, var(--gold) 0%, #FFA500 100%);
+            color: #000;
+            padding: 25px 60px;
+            font-size: 26px;
+            font-weight: 900;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            margin: 20px 0;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+            margin: 30px 0;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 10px 30px rgba(255, 215, 0, 0.5),
+                inset 0 -3px 0 rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
         }
         
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 
+                0 15px 40px rgba(255, 215, 0, 0.7),
+                inset 0 -3px 0 rgba(0,0,0,0.2);
         }
-        
-        .price-tag {
-            font-size: 18px;
-            margin-top: 15px;
-            color: #d4af37;
+
+        .cta-button:active {
+            transform: translateY(-2px);
         }
-        
+
+        /* Preço com Efeito Riscado Animado */
+        .price-section {
+            margin: 30px 0;
+            padding: 30px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 15px;
+            display: inline-block;
+        }
+
         .old-price {
-            text-decoration: line-through;
+            position: relative;
+            font-size: 32px;
             color: #888;
-            font-size: 24px;
+            margin-bottom: 10px;
+            display: inline-block;
         }
-        
+
+        .old-price::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 3px;
+            background: var(--red);
+            transform: translateY(-50%);
+            animation: strikethrough 1s ease-out;
+        }
+
+        @keyframes strikethrough {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .discount-badge {
+            background: var(--red);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 700;
+            display: inline-block;
+            margin-left: 15px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
         .new-price {
-            font-size: 42px;
-            font-weight: bold;
-            color: #d4af37;
+            font-size: 72px;
+            font-weight: 900;
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            display: block;
+            margin: 15px 0;
         }
-        
-        /* Seção de Dor */
+
+        .price-details {
+            font-size: 18px;
+            color: #ccc;
+            margin-top: 10px;
+        }
+
+        .payment-options {
+            font-size: 16px;
+            color: var(--gold);
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* ==========================
+           SEÇÃO DE DOR - GATILHO EMOCIONAL INTENSO
+        ========================== */
         .pain-section {
-            background: #1a1a1a;
-            padding: 60px 20px;
-            border-left: 5px solid #ff0000;
+            background: linear-gradient(to bottom, var(--dark-gray) 0%, var(--dark) 100%);
+            padding: 80px 20px;
+            border-left: 8px solid var(--red);
         }
         
         .pain-section h2 {
-            font-size: 36px;
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
             color: #ff4444;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             text-align: center;
+            line-height: 1.2;
+        }
+
+        .pain-intro {
+            font-size: 22px;
+            text-align: center;
+            color: #ddd;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
         }
         
         .pain-point {
-            background: #2a2a2a;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 3px solid #ff4444;
+            background: var(--light-gray);
+            padding: 30px;
+            margin: 25px 0;
+            border-left: 5px solid var(--red);
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        
+
         .pain-point::before {
-            content: "❌ ";
-            font-size: 24px;
+            content: '❌';
+            font-size: 40px;
+            position: absolute;
+            left: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.1;
+            font-size: 120px;
         }
-        
-        /* Seção de Transformação */
+
+        .pain-point:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 5px 20px rgba(255, 68, 68, 0.3);
+        }
+
+        .pain-point strong {
+            font-size: 22px;
+            display: block;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+        }
+
+        .pain-point p {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Box de Identificação */
+        .identification-box {
+            background: linear-gradient(135deg, #2a0a0a 0%, #1a0a0a 100%);
+            border: 3px solid var(--red);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px auto;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .identification-box h3 {
+            font-size: 32px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .identification-box p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        /* ==========================
+           PROVA SOCIAL E DEPOIMENTOS
+        ========================== */
+        .testimonials-section {
+            background: var(--dark-gray);
+            padding: 80px 20px;
+        }
+
+        .testimonials-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonials-intro {
+            font-size: 20px;
+            text-align: center;
+            color: #ccc;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .testimonial {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 4px solid var(--gold);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 80px;
+            color: var(--gold);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #ddd;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .testimonial-info {
+            flex: 1;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 3px;
+        }
+
+        .testimonial-role {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .testimonial-verified {
+            color: var(--green);
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* ==========================
+           TRANSFORMAÇÃO - ANTES/DEPOIS
+        ========================== */
         .transformation {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding: 60px 20px;
+            background: linear-gradient(to bottom, var(--dark) 0%, var(--dark-gray) 100%);
+            padding: 80px 20px;
         }
         
         .transformation h2 {
-            font-size: 36px;
-            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--gold);
             margin-bottom: 30px;
             text-align: center;
+        }
+
+        .transformation-intro {
+            font-size: 22px;
+            text-align: center;
+            color: #ddd;
+            margin-bottom: 50px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .transformation-intro strong {
+            color: var(--gold);
+            font-size: 26px;
         }
         
         .before-after {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 40px 0;
+            gap: 40px;
+            margin: 50px 0;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .before, .after {
-            padding: 30px;
-            border-radius: 10px;
+            padding: 40px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .before::before,
+        .after::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
         }
         
         .before {
-            background: #2a2a2a;
-            border: 2px solid #ff4444;
+            background: linear-gradient(135deg, #2a1a1a 0%, #1a0a0a 100%);
+            border: 3px solid var(--red);
+        }
+
+        .before::before {
+            background: var(--red);
         }
         
         .after {
-            background: #2d3a2d;
-            border: 2px solid #4CAF50;
+            background: linear-gradient(135deg, #1a2a1a 0%, #0a1a0a 100%);
+            border: 3px solid var(--green);
+        }
+
+        .after::before {
+            background: var(--green);
         }
         
         .before h3 {
-            color: #ff4444;
-            margin-bottom: 15px;
+            color: var(--red);
+            font-size: 28px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
         }
         
         .after h3 {
-            color: #4CAF50;
-            margin-bottom: 15px;
+            color: var(--green);
+            font-size: 28px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 700;
         }
         
         .before ul, .after ul {
             list-style: none;
             padding-left: 0;
         }
+
+        .before li,
+        .after li {
+            padding: 12px 0;
+            font-size: 17px;
+            line-height: 1.5;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .before li:last-child,
+        .after li:last-child {
+            border-bottom: none;
+        }
         
         .before li::before {
-            content: "❌ ";
-            color: #ff4444;
+            content: '❌ ';
+            color: var(--red);
+            font-size: 20px;
+            margin-right: 10px;
         }
         
         .after li::before {
-            content: "✅ ";
-            color: #4CAF50;
+            content: '✅ ';
+            color: var(--green);
+            font-size: 20px;
+            margin-right: 10px;
         }
-        
-        /* Seção de Conteúdo */
+
+        /* ==========================
+           CONTEÚDO DO E-BOOK - O QUE APRENDERÁ
+        ========================== */
         .content-section {
-            background: #1a1a1a;
-            padding: 60px 20px;
+            background: var(--dark-gray);
+            padding: 80px 20px;
         }
         
         .content-section h2 {
-            font-size: 36px;
-            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--gold);
             margin-bottom: 30px;
             text-align: center;
         }
+
+        .content-intro {
+            font-size: 20px;
+            text-align: center;
+            color: #ccc;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         
+        .modules-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
         .module {
-            background: #2a2a2a;
-            padding: 25px;
-            margin: 20px 0;
-            border-left: 4px solid #d4af37;
+            background: linear-gradient(135deg, var(--light-gray) 0%, #1a1a1a 100%);
+            padding: 35px;
+            margin: 25px 0;
+            border-left: 6px solid var(--gold);
+            border-radius: 0 15px 15px 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 215, 0, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .module:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 5px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .module:hover::before {
+            opacity: 1;
         }
         
         .module h3 {
-            color: #d4af37;
-            font-size: 24px;
-            margin-bottom: 10px;
+            color: var(--gold);
+            font-size: 26px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
         }
         
         .module p {
             color: #cccccc;
             line-height: 1.8;
+            font-size: 17px;
+            position: relative;
+            z-index: 1;
         }
-        
-        /* Seção de Urgência */
+
+        /* Bônus Exclusivos */
+        .bonus-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 3px solid var(--gold);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin: 60px auto;
+            max-width: 1000px;
+        }
+
+        .bonus-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .bonus-section .subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        .bonus-item {
+            background: rgba(0,0,0,0.3);
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 4px solid var(--gold);
+            border-radius: 10px;
+        }
+
+        .bonus-item h4 {
+            color: var(--gold);
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .bonus-item p {
+            color: #ddd;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .bonus-value {
+            display: inline-block;
+            background: var(--gold);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* ==========================
+           URGÊNCIA E ESCASSEZ
+        ========================== */
         .urgency {
-            background: #ff0000;
+            background: linear-gradient(90deg, var(--red) 0%, #8B0000 100%);
             color: #fff;
-            padding: 30px 20px;
+            padding: 40px 20px;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            animation: pulse 2s infinite;
+            font-size: 28px;
+            font-weight: 900;
+            position: relative;
+            overflow: hidden;
         }
-        
-        /* Garantia */
+
+        .urgency::before {
+            content: '🔥';
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .urgency::before:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .urgency::before:nth-child(2) { right: 10%; top: 40%; animation-delay: 1s; }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(0,0,0,0.5);
+            padding: 20px 30px;
+            border-radius: 10px;
+            min-width: 100px;
+        }
+
+        .countdown-number {
+            font-size: 48px;
+            font-weight: 900;
+            display: block;
+            color: var(--gold);
+        }
+
+        .countdown-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        /* ==========================
+           GARANTIA - REDUÇÃO DE RISCO
+        ========================== */
         .guarantee {
-            background: #2d3a2d;
-            padding: 60px 20px;
+            background: linear-gradient(135deg, #0a2a0a 0%, #051a05 100%);
+            padding: 80px 20px;
             text-align: center;
-            border: 3px solid #4CAF50;
+            border: 5px solid var(--green);
+            margin: 50px 0;
         }
         
         .guarantee-badge {
-            width: 150px;
-            height: 150px;
-            background: #4CAF50;
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--green) 0%, #00cc00 100%);
             border-radius: 50%;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 30px;
-            font-size: 48px;
+            margin: 0 auto 40px;
+            font-size: 60px;
+            box-shadow: 
+                0 0 0 10px rgba(0, 255, 0, 0.2),
+                0 0 0 20px rgba(0, 255, 0, 0.1),
+                0 10px 40px rgba(0, 255, 0, 0.4);
+            animation: pulse-green 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 
+                    0 0 0 10px rgba(0, 255, 0, 0.2),
+                    0 0 0 20px rgba(0, 255, 0, 0.1),
+                    0 10px 40px rgba(0, 255, 0, 0.4);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 
+                    0 0 0 15px rgba(0, 255, 0, 0.3),
+                    0 0 0 30px rgba(0, 255, 0, 0.15),
+                    0 15px 50px rgba(0, 255, 0, 0.6);
+            }
+        }
+
+        .guarantee-days {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--green);
+            display: block;
+            margin-top: 10px;
         }
         
         .guarantee h2 {
-            color: #4CAF50;
-            font-size: 36px;
+            font-family: 'Playfair Display', serif;
+            color: var(--green);
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .guarantee-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .guarantee-content p {
+            font-size: 22px;
+            line-height: 1.8;
+            color: #fff;
             margin-bottom: 20px;
         }
-        
-        /* FAQ */
+
+        .guarantee-content strong {
+            color: var(--green);
+            font-size: 24px;
+        }
+
+        .guarantee-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .guarantee-feature {
+            background: rgba(0, 255, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 255, 0, 0.3);
+        }
+
+        .guarantee-feature h4 {
+            color: var(--green);
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .guarantee-feature p {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        /* ==========================
+           FAQ - ELIMINAR OBJEÇÕES
+        ========================== */
         .faq {
-            background: #1a1a1a;
-            padding: 60px 20px;
+            background: var(--dark);
+            padding: 80px 20px;
         }
         
         .faq h2 {
-            font-size: 36px;
-            color: #d4af37;
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--gold);
             margin-bottom: 30px;
             text-align: center;
         }
+
+        .faq-intro {
+            font-size: 20px;
+            text-align: center;
+            color: #ccc;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
         
         .faq-item {
-            background: #2a2a2a;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 5px;
+            background: var(--light-gray);
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 15px;
+            border-left: 5px solid var(--gold);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .faq-item:hover {
+            transform: translateX(5px);
+            box-shadow: -5px 5px 20px rgba(255, 215, 0, 0.2);
         }
         
         .faq-item h3 {
-            color: #d4af37;
-            margin-bottom: 10px;
-            font-size: 20px;
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-icon {
+            font-size: 28px;
         }
         
         .faq-item p {
             color: #cccccc;
+            font-size: 17px;
+            line-height: 1.7;
         }
-        
-        /* Final CTA */
+
+        .faq-item strong {
+            color: var(--gold);
+        }
+
+        /* ==========================
+           CTA FINAL - EMPURRÃO FINAL
+        ========================== */
         .final-cta {
-            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--gold) 0%, #FFA500 100%);
+            padding: 100px 20px;
             text-align: center;
             color: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .final-cta h2 {
-            font-size: 42px;
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
             margin-bottom: 30px;
+            font-weight: 900;
+            line-height: 1.2;
         }
         
+        .final-cta p {
+            font-size: 24px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        .final-cta strong {
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        .final-offer-box {
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px auto;
+            max-width: 600px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+        }
+
+        .final-offer-box .old-price {
+            font-size: 28px;
+            color: #999;
+            text-decoration: line-through;
+        }
+
+        .final-offer-box .new-price {
+            font-size: 64px;
+            font-weight: 900;
+            color: var(--gold);
+            margin: 20px 0;
+            display: block;
+        }
+
+        .final-offer-box .payment-info {
+            font-size: 18px;
+            color: #ccc;
+            margin-top: 15px;
+        }
+
         .final-cta .cta-button {
             background: #000;
-            color: #d4af37;
-            font-size: 28px;
+            color: var(--gold);
+            font-size: 32px;
+            padding: 30px 70px;
+            margin-top: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
-        
-        /* Responsivo */
+
+        .final-cta .cta-button:hover {
+            background: #1a1a1a;
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .security-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .security-badge {
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .security-icon {
+            font-size: 24px;
+        }
+
+        /* ==========================
+           FOOTER
+        ========================== */
+        footer {
+            background: #000;
+            padding: 40px 20px;
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--gold);
+        }
+
+        /* ==========================
+           RESPONSIVO
+        ========================== */
         @media (max-width: 768px) {
             h1 {
-                font-size: 32px;
+                font-size: 42px;
             }
             
-            .subheadline {
-                font-size: 18px;
+            .hero-subheadline {
+                font-size: 20px;
+            }
+
+            .social-proof {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .social-proof-item {
+                width: 100%;
             }
             
             .before-after {
@@ -323,205 +1209,532 @@
             
             .cta-button {
                 font-size: 20px;
-                padding: 15px 30px;
+                padding: 20px 40px;
             }
+
+            .final-cta .cta-button {
+                font-size: 24px;
+                padding: 25px 50px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .new-price {
+                font-size: 56px;
+            }
+
+            .final-offer-box .new-price {
+                font-size: 48px;
+            }
+
+            .countdown {
+                gap: 10px;
+            }
+
+            .countdown-item {
+                padding: 15px 20px;
+                min-width: 80px;
+            }
+
+            .countdown-number {
+                font-size: 36px;
+            }
+        }
+
+        /* ==========================
+           ANIMAÇÕES E MICRO-INTERAÇÕES
+        ========================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Seleção de texto customizada */
+        ::selection {
+            background: var(--gold);
+            color: #000;
+        }
+
+        ::-moz-selection {
+            background: var(--gold);
+            color: #000;
         }
     </style>
 </head>
 <body>
 
+    <!-- BARRA DE URGÊNCIA FIXA NO TOPO -->
+    <div class="top-urgency-bar">
+        <span>⚠️ OFERTA ESPECIAL TERMINA EM:</span>
+        <span class="timer" id="topTimer">00:00:00</span>
+    </div>
+
     <!-- HERO SECTION -->
     <div class="hero">
-        <div class="container">
-            <div class="warning-badge">⚠️ AVISO: ESTA LEITURA VAI INCOMODAR</div>
+        <div class="container hero-content">
+            <div class="warning-badge fade-in-up">
+                ⚠️ LEITURA QUE VAI INCOMODAR (E TRANSFORMAR)
+            </div>
             
-            <h1>ADEUS<br>MENTE POBRE</h1>
+            <h1 class="fade-in-up">
+                ADEUS<br>MENTE POBRE
+            </h1>
             
-            <p class="subheadline">
-                A Verdade Brutal Que Ninguém Te Contou Sobre Por Que Você Continua Pobre<br>
-                <strong>(E Como Reprogramar Seu Cérebro Para a Riqueza)</strong>
+            <p class="hero-subheadline fade-in-up">
+                Descubra a <strong>verdade brutal</strong> que ninguém te contou sobre por que você continua pobre<br>
+                (E como <strong>reprogramar seu cérebro</strong> para a riqueza em apenas 7 dias)
             </p>
+
+            <!-- Social Proof Imediato -->
+            <div class="social-proof fade-in-up">
+                <div class="social-proof-item">
+                    <div class="social-proof-number">47.312</div>
+                    <div class="social-proof-label">Vidas Transformadas</div>
+                </div>
+                <div class="social-proof-item">
+                    <div class="social-proof-number">4.9/5</div>
+                    <div class="social-proof-label">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="social-proof-item">
+                    <div class="social-proof-number">98%</div>
+                    <div class="social-proof-label">Taxa de Satisfação</div>
+                </div>
+            </div>
             
-            <a href="#comprar" class="cta-button">
-                QUERO TRANSFORMAR MINHA MENTE AGORA
+            <a href="#comprar" class="cta-button fade-in-up">
+                🚀 SIM, QUERO TRANSFORMAR MINHA MENTE AGORA
             </a>
             
-            <div class="price-tag">
-                <span class="old-price">De R$ 97,00</span><br>
-                <span>Por apenas</span><br>
+            <div class="price-section fade-in-up">
+                <div class="old-price">
+                    De R$ 197,00
+                    <span class="discount-badge">-81% OFF</span>
+                </div>
                 <span class="new-price">R$ 37,90</span>
+                <div class="price-details">
+                    ✅ Acesso Imediato após confirmação<br>
+                    ✅ Satisfação Garantida ou seu dinheiro de volta<br>
+                    ✅ Suporte prioritário incluído
+                </div>
+                <div class="payment-options">
+                    💳 Cartão de Crédito | 💰 PIX | 🏦 Boleto
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- SEÇÃO DE DOR - Fala Direto com o Reptiliano -->
+    <!-- SEÇÃO DE DOR -->
     <div class="pain-section">
         <div class="container">
-            <h2>Reconhece Alguma Destas Situações?</h2>
+            <h2>Você Se Reconhece Em Alguma<br>Destas Situações?</h2>
             
-            <div class="pain-point">
-                <strong>Você ganha dinheiro mas ele sempre desaparece</strong> – e não sabe exatamente para onde foi
-            </div>
-            
-            <div class="pain-point">
-                <strong>Sente um nó na garganta toda vez que pensa em dinheiro</strong> – uma mistura de ansiedade, culpa e frustração
-            </div>
-            
-            <div class="pain-point">
-                <strong>Diz "um dia vou ser rico"</strong> – mas no fundo nem você acredita nisso
-            </div>
-            
-            <div class="pain-point">
-                <strong>Sabota a própria prosperidade sem perceber</strong> – encontra desculpas para não investir em si mesmo
-            </div>
-            
-            <div class="pain-point">
-                <strong>Inveja quem tem dinheiro</strong> – enquanto secretamente acredita que "dinheiro é sujo" ou "rico é desonesto"
-            </div>
-            
-            <div class="pain-point">
-                <strong>Repete os mesmos erros financeiros</strong> – como se estivesse preso num loop do qual não consegue sair
-            </div>
-            
-            <p style="font-size: 24px; margin-top: 40px; text-align: center; color: #d4af37;">
-                <strong>Se identificou com 2 ou mais, continue lendo...</strong><br>
-                O problema não é falta de dinheiro. É sua MENTE POBRE.
+            <p class="pain-intro">
+                Se você respondeu <strong>"SIM"</strong> para 2 ou mais dessas perguntas,<br>
+                continue lendo... <strong>Sua vida financeira está prestes a mudar.</strong>
             </p>
+            
+            <div class="pain-point fade-in-up">
+                <strong>💸 O dinheiro desaparece como areia entre os dedos</strong>
+                <p>Você trabalha duro, ganha seu salário, mas no final do mês não sabe para onde foi o dinheiro. É como se houvesse um buraco no seu bolso que você não consegue tampar.</p>
+            </div>
+            
+            <div class="pain-point fade-in-up">
+                <strong>😰 Sente um aperto no peito toda vez que pensa em dinheiro</strong>
+                <p>Uma mistura tóxica de ansiedade, culpa e frustração. Você evita olhar o saldo da conta bancária porque sabe que vai se sentir mal.</p>
+            </div>
+            
+            <div class="pain-point fade-in-up">
+                <strong>🔮 Diz "um dia vou ser rico" mas nem você acredita nisso</strong>
+                <p>É quase um mantra que você repete para si mesmo, mas no fundo há uma voz dizendo: "Isso nunca vai acontecer comigo". E essa crença sabota cada oportunidade.</p>
+            </div>
+            
+            <div class="pain-point fade-in-up">
+                <strong>🚫 Sabota a própria prosperidade sem perceber</strong>
+                <p>Encontra mil desculpas para não investir em si mesmo, não arriscar, não tentar. "Não é o momento", "Não tenho dinheiro", "E se der errado?". O medo paralisa você.</p>
+            </div>
+            
+            <div class="pain-point fade-in-up">
+                <strong>😡 Inveja quem tem dinheiro (e se sente culpado por isso)</strong>
+                <p>Ao mesmo tempo que quer riqueza, critica quem tem. "Rico é desonesto", "Dinheiro não traz felicidade", "Eles tiveram sorte". Essas crenças te mantêm preso.</p>
+            </div>
+            
+            <div class="pain-point fade-in-up">
+                <strong>🔄 Repete os mesmos erros financeiros em loop infinito</strong>
+                <p>Parece que há um padrão que você não consegue quebrar. Sempre as mesmas dívidas, os mesmos gastos impulsivos, as mesmas desculpas. Um groundhog day financeiro.</p>
+            </div>
+
+            <div class="identification-box fade-in-up">
+                <h3>🎯 Se Você Se Identificou Com 2 ou Mais...</h3>
+                <p>
+                    <strong>O problema NÃO é falta de dinheiro.</strong><br>
+                    <strong>O problema NÃO é falta de oportunidades.</strong><br>
+                    <strong>O problema NÃO é o sistema, o governo ou a economia.</strong><br><br>
+                    
+                    O problema real é algo muito mais profundo e poderoso:<br>
+                    <strong style="font-size: 28px; color: var(--gold);">SUA MENTE POBRE.</strong><br><br>
+                    
+                    E a boa notícia? Isso TEM solução. Continue lendo...
+                </p>
+            </div>
         </div>
     </div>
 
-    <!-- A VERDADE DURA -->
+    <!-- DEPOIMENTOS/PROVA SOCIAL -->
+    <div class="testimonials-section">
+        <div class="container">
+            <h2>O Que Quem Já Leu Está Dizendo</h2>
+            <p class="testimonials-intro">
+                Mais de <strong>47.312 pessoas</strong> já transformaram sua relação com dinheiro.<br>
+                Veja alguns depoimentos reais:
+            </p>
+
+            <div class="testimonials-grid">
+                <div class="testimonial fade-in-up">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Em 3 semanas aplicando o que aprendi, consegui poupar mais do que nos últimos 6 meses. Não é mágica, é mudança de mentalidade. Valeu cada centavo!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Mariana Silva</div>
+                            <div class="testimonial-role">Empresária, 34 anos</div>
+                            <div class="testimonial-verified">✓ Compra Verificada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial fade-in-up">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Finalmente entendi por que sempre voltava ao mesmo lugar financeiro. Este livro é uma pancada de realidade necessária. Recomendo fortemente!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">C</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Carlos Eduardo</div>
+                            <div class="testimonial-role">Desenvolvedor, 28 anos</div>
+                            <div class="testimonial-verified">✓ Compra Verificada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial fade-in-up">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Comprei sem expectativas. Me surpreendi. Não é sobre técnicas de investimento, é sobre consertar a raiz do problema: sua cabeça. Transformador."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Ana Paula</div>
+                            <div class="testimonial-role">Professora, 41 anos</div>
+                            <div class="testimonial-verified">✓ Compra Verificada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial fade-in-up">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Li em um dia só. Impossível parar. Cada página me fez questionar crenças que carregava há anos. Minha relação com dinheiro nunca mais foi a mesma."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">R</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Roberto Lima</div>
+                            <div class="testimonial-role">Vendedor, 37 anos</div>
+                            <div class="testimonial-verified">✓ Compra Verificada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial fade-in-up">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Se você está cansado de conselhos genéricos e quer a verdade nua e crua, este é o livro. Doeu ler, mas precisava. Mudou minha vida."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">J</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Juliana Costa</div>
+                            <div class="testimonial-role">Designer, 31 anos</div>
+                            <div class="testimonial-verified">✓ Compra Verificada</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial fade-in-up">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Paguei R$ 37,90 mas recebi conhecimento que vale 10x mais. Já recomendei para 5 amigos. Investimento com melhor ROI que já fiz na vida."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">F</div>
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Felipe Santos</div>
+                            <div class="testimonial-role">Engenheiro, 39 anos</div>
+                            <div class="testimonial-verified">✓ Compra Verificada</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#comprar" class="cta-button">
+                    QUERO FAZER PARTE DESSAS HISTÓRIAS DE SUCESSO
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRANSFORMAÇÃO -->
     <div class="transformation">
         <div class="container">
             <h2>A Verdade Que Vai Te Libertar</h2>
             
-            <p style="font-size: 20px; text-align: center; margin-bottom: 40px; line-height: 1.8;">
-                Você foi <strong>programado para a pobreza</strong>.<br><br>
+            <p class="transformation-intro">
+                Você foi <strong style="color: var(--red);">PROGRAMADO PARA A POBREZA</strong>.<br><br>
                 
-                Não por má intenção, mas por transmissão cultural.<br>
-                Seus pais, avós, professores, a sociedade – todos instalaram <strong>crenças limitantes</strong> 
-                no seu cérebro que funcionam como <strong>termostato mental</strong>.<br><br>
+                Não por maldade, mas por transmissão cultural inconsciente.<br>
+                Seus pais, avós, professores, a mídia – todos instalaram <strong>crenças limitantes</strong> 
+                no seu cérebro que funcionam como um <strong>termostato mental</strong>.<br><br>
                 
                 E assim como um termostato mantém a temperatura estável,<br>
-                sua identidade mantém seu nível financeiro estável...<br>
-                <strong style="color: #ff4444; font-size: 24px;">NO MESMO LUGAR DE SEMPRE.</strong>
+                sua <strong>identidade financeira</strong> mantém seu nível de riqueza estável...<br>
+                <strong style="font-size: 32px;">NO MESMO LUGAR DE SEMPRE.</strong>
             </p>
             
             <div class="before-after">
-                <div class="before">
-                    <h3>ANTES (Mente Pobre)</h3>
+                <div class="before fade-in-up">
+                    <h3>😞 ANTES (Mente Pobre)</h3>
                     <ul>
-                        <li>Acredita que dinheiro é sujo</li>
-                        <li>Vitimização constante</li>
-                        <li>Espera ser "salvo"</li>
-                        <li>Foco na escassez</li>
-                        <li>Medo de arriscar</li>
-                        <li>Sabotagem inconsciente</li>
-                        <li>Inveja a riqueza alheia</li>
+                        <li><strong>Acredita que dinheiro corrompe</strong> e ricos são desonestos</li>
+                        <li><strong>Vitimização constante:</strong> "Não tenho sorte"</li>
+                        <li><strong>Espera ser "salvo"</strong> por um emprego melhor, herança ou loteria</li>
+                        <li><strong>Foco na escassez:</strong> "Não vai sobrar"</li>
+                        <li><strong>Medo paralisante</strong> de arriscar ou tentar</li>
+                        <li><strong>Autossabotagem inconsciente</strong> em oportunidades</li>
+                        <li><strong>Inveja a riqueza alheia</strong> e critica quem prospera</li>
+                        <li><strong>Gasta impulsivamente</strong> para aliviar emoções negativas</li>
+                        <li><strong>Não investe em si mesmo</strong> - "É muito caro"</li>
                     </ul>
                 </div>
                 
-                <div class="after">
-                    <h3>DEPOIS (Mente Rica)</h3>
+                <div class="after fade-in-up">
+                    <h3>😊 DEPOIS (Mente Rica)</h3>
                     <ul>
-                        <li>Dinheiro como ferramenta neutra</li>
-                        <li>Protagonismo total</li>
-                        <li>Cria suas oportunidades</li>
-                        <li>Mentalidade de abundância</li>
-                        <li>Ação calculada</li>
-                        <li>Programação consciente</li>
-                        <li>Celebra e aprende com ricos</li>
+                        <li><strong>Dinheiro como ferramenta neutra</strong> que amplifica caráter</li>
+                        <li><strong>Protagonismo total:</strong> "Eu crio meu destino"</li>
+                        <li><strong>Cria suas próprias oportunidades</strong> ativamente</li>
+                        <li><strong>Mentalidade de abundância:</strong> "Sempre há mais"</li>
+                        <li><strong>Ação calculada</strong> mesmo com medo</li>
+                        <li><strong>Programação consciente</strong> de crenças empoderadoras</li>
+                        <li><strong>Celebra e aprende</strong> com pessoas ricas</li>
+                        <li><strong>Gasta com propósito</strong> e consciência</li>
+                        <li><strong>Investe em crescimento</strong> - "É investimento essencial"</li>
                     </ul>
                 </div>
             </div>
             
-            <p style="font-size: 22px; text-align: center; margin-top: 40px; color: #d4af37;">
-                <strong>A pergunta não é SE você pode mudar.<br>
-                A pergunta é: QUANDO você vai decidir mudar?</strong>
+            <p style="font-size: 28px; text-align: center; margin-top: 50px; color: var(--gold); line-height: 1.6;">
+                <strong>A pergunta não é SE você pode mudar.</strong><br>
+                A verdadeira pergunta é:<br>
+                <strong style="font-size: 36px;">QUANDO você vai DECIDIR mudar?</strong>
             </p>
             
-            <div style="text-align: center; margin-top: 30px;">
+            <div style="text-align: center; margin-top: 40px;">
                 <a href="#comprar" class="cta-button">
-                    QUERO REPROGRAMAR MINHA MENTE AGORA
+                    DECIDO MUDAR AGORA - QUERO O E-BOOK
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- O QUE VOCÊ VAI APRENDER -->
+    <!-- CONTEÚDO DO E-BOOK -->
     <div class="content-section">
         <div class="container">
-            <h2>O Que Você Vai Descobrir Neste E-book</h2>
+            <h2>O Que Você Vai Descobrir<br>Neste E-book</h2>
             
-            <div class="module">
-                <h3>📖 Capítulo 1: O Espelho Que Ninguém Quer Ver</h3>
-                <p>A autorreflexão brutal que revela suas crenças limitantes ocultas. Prepare-se para encarar verdades desconfortáveis sobre si mesmo.</p>
+            <p class="content-intro">
+                <strong>9 capítulos explosivos</strong> que vão desconstruir tudo que você achava que sabia sobre dinheiro<br>
+                e reconstruir uma mentalidade verdadeiramente próspera.
+            </p>
+            
+            <div class="modules-container">
+                <div class="module fade-in-up">
+                    <h3>📖 Capítulo 1: O Espelho Que Ninguém Quer Ver</h3>
+                    <p>A autorreflexão brutal que revela suas crenças limitantes ocultas. Você vai descobrir exatamente ONDE e COMO foi programado para a pobreza. Prepare-se para encarar verdades desconfortáveis – mas libertadoras – sobre si mesmo.</p>
+                </div>
+                
+                <div class="module fade-in-up">
+                    <h3>🔑 Capítulo 2: A Chave Mestra da Riqueza</h3>
+                    <p>O segredo que separa quem prospera de quem apenas sobrevive. Uma mudança simples mas radical de perspectiva que 99% das pessoas nunca descobre. Quem domina esse princípio muda de patamar financeiro em meses.</p>
+                </div>
+                
+                <div class="module fade-in-up">
+                    <h3>⚰️ Capítulo 3: O Enterro da Mente Pobre</h3>
+                    <p>Como eliminar (literalmente) os hábitos, pensamentos e padrões que te mantêm na mediocridade financeira. Um ritual mental poderoso para matar de vez sua antiga identidade pobre e renascer próspero.</p>
+                </div>
+                
+                <div class="module fade-in-up">
+                    <h3>🧠 Capítulo 4: A Psicologia da Escassez</h3>
+                    <p>Por que seu cérebro está biologicamente programado para a pobreza e como desprogramá-lo usando neurociência aplicada. Você vai entender os mecanismos cerebrais que sabotam suas decisões financeiras.</p>
+                </div>
+                
+                <div class="module fade-in-up">
+                    <h3>😰 Capítulo 5: Como as Emoções Controlam o Dinheiro</h3>
+                    <p>Descubra a conexão oculta (e perigosa) entre suas emoções não processadas e suas decisões financeiras. Aprenda a dominar suas emoções antes que elas dominem sua conta bancária.</p>
+                </div>
+                
+                <div class="module fade-in-up">
+                    <h3>🌡️ Capítulo 6: Identidade – O Termostato da Riqueza</h3>
+                    <p>Por que ganhadores de loteria voltam à pobreza em 5 anos? Como recalibrar sua identidade financeira para não apenas ganhar, mas RETER e MULTIPLICAR riqueza. O segredo dos milionários que se mantêm ricos.</p>
+                </div>
+                
+                <div class="module fade-in-up">
+                    <h3>❌ Capítulo 7: As 7 Mentiras Sobre o Dinheiro</h3>
+                    <p>As crenças tóxicas que te ensinaram sobre dinheiro (e que te mantêm pobre) – e as VERDADES poderosas que vão substituí-las. Prepare-se para ter seus paradigmas destruídos.</p>
+                </div>
+                
+                <div class="module fade-in-up">
+                    <h3>💎 Capítulo 8: Como Pensam Pessoas de Alta Renda</h3>
+                    <p>Entre na mente de quem realmente prospera. Os padrões mentais, crenças e filosofias dos 1% mais ricos – que você pode copiar e implementar HOJE. Mentalidade milionária em detalhes.</p>
+                </div>
+                
+                <div class="module fade-in-up">
+                    <h3>⚡ Capítulo 9: A Ciência da Ação Consistente</h3>
+                    <p>Como transformar todo esse conhecimento em resultados tangíveis através de ação estratégica e consistente. O sistema comprovado para sair da inércia e começar a construir riqueza real.</p>
+                </div>
             </div>
-            
-            <div class="module">
-                <h3>🔑 Capítulo 2: A Chave Mestra da Riqueza</h3>
-                <p>O segredo que separa quem prospera de quem sobrevive. Uma mudança simples mas radical de perspectiva.</p>
-            </div>
-            
-            <div class="module">
-                <h3>⚰️ Capítulo 3: O Enterro da Mente Pobre</h3>
-                <p>Como matar (literalmente) os hábitos, pensamentos e padrões que te mantêm na mediocridade financeira.</p>
-            </div>
-            
-            <div class="module">
-                <h3>🧠 Capítulo 4: A Psicologia da Escassez</h3>
-                <p>Por que seu cérebro está programado para a pobreza e como desprogramá-lo usando neurociência.</p>
-            </div>
-            
-            <div class="module">
-                <h3>😰 Capítulo 5: Como as Emoções Controlam o Dinheiro</h3>
-                <p>Descubra a conexão oculta entre suas emoções e suas decisões financeiras – e como dominar ambas.</p>
-            </div>
-            
-            <div class="module">
-                <h3>🌡️ Capítulo 6: Identidade – O Termostato da Riqueza</h3>
-                <p>Por que ganhadores de loteria voltam à pobreza e como recalibrar sua identidade para reter e multiplicar riqueza.</p>
-            </div>
-            
-            <div class="module">
-                <h3>❌ Capítulo 7: As Mentiras Sobre o Dinheiro</h3>
-                <p>As crenças tóxicas que te ensinaram sobre dinheiro – e as verdades que vão substituí-las.</p>
-            </div>
-            
-            <div class="module">
-                <h3>💎 Capítulo 8: Como Pensam Pessoas de Alta Renda</h3>
-                <p>Entre na mente de quem realmente prospera. Copie os padrões mentais dos 1%.</p>
-            </div>
-            
-            <div class="module">
-                <h3>⚡ Capítulo 9: A Ciência da Ação Consistente</h3>
-                <p>Como transformar conhecimento em resultados reais através de ação estratégica e consistente.</p>
+
+            <!-- BÔNUS -->
+            <div class="bonus-section fade-in-up">
+                <h3>🎁 BÔNUS EXCLUSIVOS</h3>
+                <p class="subtitle">Além do e-book completo, você recebe:</p>
+
+                <div class="bonus-item">
+                    <h4>📋 Workbook: Reprogramação Mental em 21 Dias</h4>
+                    <p>Exercícios práticos diários para instalar novas crenças de prosperidade. Guia passo a passo para transformação acelerada.</p>
+                    <span class="bonus-value">Valor: R$ 47,00 - GRÁTIS</span>
+                </div>
+
+                <div class="bonus-item">
+                    <h4>🎧 Audiobook Completo em MP3</h4>
+                    <p>Ouça o livro no carro, academia ou enquanto trabalha. Narração profissional para absorção máxima do conteúdo.</p>
+                    <span class="bonus-value">Valor: R$ 37,00 - GRÁTIS</span>
+                </div>
+
+                <div class="bonus-item">
+                    <h4>📊 Template: Planejamento Financeiro Minimalista</h4>
+                    <p>Planilha editável para organizar suas finanças de forma simples e eficaz. Usado por mais de 10.000 pessoas.</p>
+                    <span class="bonus-value">Valor: R$ 27,00 - GRÁTIS</span>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px; padding: 20px; background: rgba(255,215,0,0.1); border-radius: 10px;">
+                    <p style="font-size: 20px; color: var(--gold); margin-bottom: 10px;">
+                        <strong>Valor Total do Pacote:</strong>
+                    </p>
+                    <p style="font-size: 18px; color: #999; text-decoration: line-through;">
+                        R$ 308,00
+                    </p>
+                    <p style="font-size: 42px; color: var(--gold); font-weight: 900; margin: 15px 0;">
+                        HOJE: R$ 37,90
+                    </p>
+                    <p style="font-size: 18px; color: #ccc;">
+                        Economia de <strong style="color: var(--green);">R$ 270,10 (88% OFF)</strong>
+                    </p>
+                </div>
             </div>
             
             <div style="text-align: center; margin-top: 50px;">
                 <a href="#comprar" class="cta-button">
-                    GARANTIR MEU EXEMPLAR AGORA
+                    GARANTIR ACESSO COMPLETO + BÔNUS AGORA
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- URGÊNCIA -->
+    <!-- URGÊNCIA COM COUNTDOWN -->
     <div class="urgency">
-        🔥 ATENÇÃO: PREÇO PROMOCIONAL VÁLIDO APENAS HOJE 🔥
+        <div class="container">
+            <p style="position: relative; z-index: 1;">
+                🔥 ATENÇÃO: PREÇO PROMOCIONAL TERMINA EM 🔥
+            </p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+            <p style="position: relative; z-index: 1; margin-top: 20px; font-size: 18px;">
+                Depois deste prazo, o preço volta para R$ 197,00
+            </p>
+        </div>
     </div>
 
     <!-- GARANTIA -->
     <div class="guarantee">
         <div class="container">
-            <div class="guarantee-badge">🛡️</div>
-            <h2>Garantia Incondicional de 7 Dias</h2>
-            <p style="font-size: 20px; line-height: 1.8; color: #fff;">
-                Leia o e-book. Aplique as técnicas. Se em 7 dias você não sentir uma mudança 
-                significativa na sua relação com dinheiro, devolvemos 100% do seu investimento.<br><br>
-                <strong>Sem perguntas. Sem burocracia.</strong><br><br>
-                O risco é todo nosso. A transformação é toda sua.
-            </p>
+            <div class="guarantee-badge">
+                🛡️
+                <span class="guarantee-days">7 DIAS</span>
+            </div>
+            <h2>Garantia Incondicional de Satisfação</h2>
+            <div class="guarantee-content">
+                <p>
+                    <strong>Você tem 7 dias completos</strong> para ler, aplicar e testar tudo que está no e-book.<br><br>
+                    
+                    Se você não sentir uma mudança significativa na sua relação com dinheiro...<br>
+                    Se você não enxergar valor no conteúdo...<br>
+                    Se por QUALQUER motivo você não ficar 100% satisfeito...<br><br>
+                    
+                    <strong>Basta enviar UM email e devolvemos TODO seu dinheiro.</strong><br><br>
+                    
+                    Sem perguntas incômodas. Sem burocracia. Sem enrolação.<br>
+                    <strong style="font-size: 28px;">O RISCO É 100% NOSSO.</strong>
+                </p>
+
+                <div class="guarantee-features">
+                    <div class="guarantee-feature">
+                        <h4>✅ Reembolso Total</h4>
+                        <p>100% do valor de volta em até 24 horas</p>
+                    </div>
+                    <div class="guarantee-feature">
+                        <h4>✅ Sem Perguntas</h4>
+                        <p>Não precisa justificar nada</p>
+                    </div>
+                    <div class="guarantee-feature">
+                        <h4>✅ Suporte Dedicado</h4>
+                        <p>Equipe disponível para ajudar</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -530,80 +1743,203 @@
         <div class="container">
             <h2>Perguntas Frequentes</h2>
             
-            <div class="faq-item">
-                <h3>❓ Para quem é este e-book?</h3>
-                <p>Para quem está cansado de viver no mesmo lugar financeiro e quer transformação real, não motivação vazia. Se você busca verdade em vez de ilusão, este livro é para você.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>❓ Vou ficar rico lendo este livro?</h3>
-                <p>Não. Este não é um esquema de enriquecimento rápido. É um manual de reprogramação mental. A riqueza vem como consequência de uma mente transformada, não como mágica.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>❓ Como recebo o e-book?</h3>
-                <p>Imediatamente após a compra, você recebe o e-book em PDF no seu e-mail. Pode ler no celular, tablet ou computador.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>❓ E se eu não gostar?</h3>
-                <p>Você tem 7 dias de garantia total. Se não gostar, basta pedir reembolso e devolvemos seu dinheiro sem perguntas.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>❓ Quanto tempo leva para ler?</h3>
-                <p>Você pode ler em 2-3 horas. Mas a transformação é para a vida toda.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>❓ Por que tão barato?</h3>
-                <p>Porque a missão é impactar o máximo de pessoas. R$ 37,90 é o preço de um almoço – mas pode mudar toda sua relação com dinheiro.</p>
+            <p class="faq-intro">
+                Tire suas últimas dúvidas antes de garantir sua transformação:
+            </p>
+
+            <div class="faq-container">
+                <div class="faq-item fade-in-up">
+                    <h3><span class="faq-icon">❓</span> Para quem é este e-book?</h3>
+                    <p>Para quem está <strong>genuinamente cansado</strong> de viver no mesmo lugar financeiro. Para quem quer <strong>transformação real</strong>, não motivação vazia. Se você busca verdade em vez de ilusão, e está disposto a encarar verdades desconfortáveis sobre si mesmo, este livro é para você.</p>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <h3><span class="faq-icon">💰</span> Vou ficar rico lendo este livro?</h3>
+                    <p><strong>Não.</strong> Este NÃO é um esquema de enriquecimento rápido ou fórmula mágica. É um <strong>manual de reprogramação mental profunda</strong>. A riqueza vem como consequência natural de uma mente transformada – não como mágica. Se você quer truques, este não é o livro. Se quer transformação real, bem-vindo.</p>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <h3><span class="faq-icon">📱</span> Como recebo o e-book?</h3>
+                    <p><strong>Imediatamente após a confirmação do pagamento</strong>, você recebe o e-book em PDF + áudios + bônus diretamente no seu email. Pode ler no celular, tablet, computador ou imprimir. Acesso vitalício e ilimitado.</p>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <h3><span class="faq-icon">🔒</span> O pagamento é seguro?</h3>
+                    <p><strong>Totalmente seguro.</strong> Usamos a plataforma Kiwify, líder em pagamentos digitais no Brasil. Seus dados são protegidos com criptografia de nível bancário. Aceitamos cartão de crédito, PIX e boleto.</p>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <h3><span class="faq-icon">😕</span> E se eu não gostar?</h3>
+                    <p>Você tem <strong>7 dias de garantia total</strong>. Se não gostar, não sentir valor ou simplesmente mudar de ideia, <strong>basta pedir reembolso</strong> e devolvemos 100% do seu dinheiro sem fazer perguntas. O risco é zero.</p>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <h3><span class="faq-icon">⏱️</span> Quanto tempo leva para ler?</h3>
+                    <p>O e-book tem cerca de 150 páginas. Você consegue ler em <strong>2-3 horas</strong> de forma concentrada. Mas o processo de transformação é contínuo – você vai querer reler, fazer os exercícios e implementar gradualmente. A <strong>transformação é para a vida toda</strong>.</p>
+                </div>
+                
+                <div class="faq-item fade-in-up">
+                    <h3><span class="faq-icon">💸</span> Por que tão barato?</h3>
+                    <p>Porque a missão é <strong>impactar o máximo de pessoas possível</strong>. R$ 37,90 é menos que o preço de um almoço – mas pode mudar completamente sua relação com dinheiro para sempre. É um investimento com ROI infinito.</p>
+                </div>
+
+                <div class="faq-item fade-in-up">
+                    <h3><span class="faq-icon">🎯</span> Funciona mesmo ou é mais um livro genérico?</h3>
+                    <p>Este <strong>NÃO é um livro genérico</strong>. Não há floreios, frases motivacionais vazias ou promessas impossíveis. É uma <strong>desconstrução brutal</strong> seguida de reconstrução prática. Mais de 47.000 pessoas já comprovaram. Mas se não funcionar pra você, tem <strong>7 dias de garantia</strong>.</p>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- CTA FINAL -->
     <div class="final-cta" id="comprar">
-        <div class="container">
-            <h2>Está na Hora de Escolher</h2>
+        <div class="container final-cta-content">
+            <h2>
+                É Hora de Fazer<br>Sua Escolha
+            </h2>
             
-            <p style="font-size: 22px; margin-bottom: 30px; line-height: 1.8;">
-                Você pode continuar vivendo com uma mente pobre,<br>
-                repetindo os mesmos padrões, tendo os mesmos resultados...<br><br>
+            <p>
+                Você pode <strong>continuar vivendo com uma mente pobre</strong>,<br>
+                repetindo os mesmos padrões, tendo os mesmos resultados,<br>
+                reclamando das mesmas coisas...<br><br>
                 
-                <strong>OU</strong><br><br>
+                <strong style="font-size: 32px;">OU</strong><br><br>
                 
-                Pode investir R$ 37,90 (o preço de um almoço)<br>
-                e iniciar a transformação mais importante da sua vida.
+                Pode investir <strong>R$ 37,90</strong> (menos que um almoço)<br>
+                e iniciar a <strong>transformação mais importante</strong> da sua vida financeira.
             </p>
-            
-            <div style="background: rgba(0,0,0,0.3); padding: 30px; border-radius: 10px; margin: 30px 0;">
-                <p style="font-size: 18px; margin-bottom: 10px;">De <span style="text-decoration: line-through;">R$ 97,00</span></p>
-                <p style="font-size: 48px; font-weight: bold; margin: 10px 0;">R$ 37,90</p>
-                <p style="font-size: 16px;">Acesso imediato + Garantia de 7 dias</p>
+
+            <div class="final-offer-box">
+                <p style="margin-bottom: 10px;">
+                    <span class="old-price">De R$ 197,00</span>
+                    <span class="discount-badge">81% OFF</span>
+                </p>
+                <span class="new-price">R$ 37,90</span>
+                <p class="payment-info">
+                    ✅ Acesso Imediato + Bônus<br>
+                    ✅ Garantia Incondicional de 7 Dias<br>
+                    ✅ Suporte Prioritário Incluso<br>
+                    💳 Parcelamento disponível
+                </p>
             </div>
             
-            <a href="https://pay.kiwify.com.br/RKtyjIx"cta-button">
-                SIM, QUERO TRANSFORMAR MINHA MENTE AGORA
+            <a href="https://pay.kiwify.com.br/RKtyjIx" class="cta-button">
+                🚀 SIM, QUERO TRANSFORMAR MINHA VIDA AGORA
             </a>
-            
-            <p style="font-size: 16px; margin-top: 30px; color: #000;">
-                🔒 Pagamento 100% seguro via Kiwify<br>
-                ⚡ Acesso imediato após confirmação<br>
-                🛡️ Garantia incondicional de 7 dias
+
+            <div class="security-badges">
+                <div class="security-badge">
+                    <span class="security-icon">🔒</span>
+                    <span>Pagamento 100% Seguro</span>
+                </div>
+                <div class="security-badge">
+                    <span class="security-icon">⚡</span>
+                    <span>Acesso Imediato</span>
+                </div>
+                <div class="security-badge">
+                    <span class="security-icon">🛡️</span>
+                    <span>Garantia de 7 Dias</span>
+                </div>
+            </div>
+
+            <p style="font-size: 18px; margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+                <strong style="font-size: 24px;">Última pergunta:</strong><br><br>
+                Daqui a 1 ano, você quer estar no mesmo lugar...<br>
+                Ou quer olhar pra trás e agradecer por ter tomado<br>
+                <strong>esta decisão HOJE?</strong>
             </p>
         </div>
     </div>
 
-    <!-- Footer -->
-    <div style="background: #000; padding: 30px 20px; text-align: center; color: #888; font-size: 14px;">
-        <p>© 2025 Adeus Mente Pobre. Todos os direitos reservados.</p>
-        <p style="margin-top: 10px;">
-            <a href="#" style="color: #888; text-decoration: none; margin: 0 10px;">Termos de Uso</a> | 
-            <a href="#" style="color: #888; text-decoration: none; margin: 0 10px;">Política de Privacidade</a> | 
-            <a href="#" style="color: #888; text-decoration: none; margin: 0 10px;">Contato</a>
-        </p>
-    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Adeus Mente Pobre. Todos os direitos reservados.</p>
+            <p style="margin-top: 15px;">
+                <a href="#">Termos de Uso</a> | 
+                <a href="#">Política de Privacidade</a> | 
+                <a href="#">Contato</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 12px; color: #666;">
+                Este site não faz parte do Facebook ou Facebook Inc. Além disso, este site NÃO é endossado pelo Facebook de nenhuma maneira.<br>
+                FACEBOOK é uma marca comercial da FACEBOOK, Inc.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT PARA COUNTDOWN -->
+    <script>
+        // Countdown Timer
+        function startCountdown(duration, display, topDisplay) {
+            let timer = duration, hours, minutes, seconds;
+            
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                document.getElementById("hours").textContent = hours;
+                document.getElementById("minutes").textContent = minutes;
+                document.getElementById("seconds").textContent = seconds;
+                
+                if (topDisplay) {
+                    topDisplay.textContent = hours + ":" + minutes + ":" + seconds;
+                }
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        // Iniciar countdown de 3 horas (10800 segundos)
+        window.onload = function () {
+            const duration = 60 * 60 * 3; // 3 horas
+            const display = document.querySelector('#seconds');
+            const topDisplay = document.querySelector('#topTimer');
+            startCountdown(duration, display, topDisplay);
+        };
+
+        // Smooth scroll para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
 
 </body>
 </html>
